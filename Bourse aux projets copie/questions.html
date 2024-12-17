@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Questions - Musée du Jouet</title>
+    <link rel="stylesheet" href="questions.css">
+    <link rel="stylesheet" href="slider.css">
+</head>
+
+<body>
+    <h1>Questions - Musée du Jouet</h1>
+    <div id="question-text"></div>
+
+    <div class="slider" style="display: none;">
+        <button class="slider--btn prev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+        </button>
+
+        <div class="slides__wrapper">
+            <div class="slides"></div>
+        </div>
+
+        <button class="slider--btn next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m9 18 6-6-6-6" />
+            </svg>
+        </button>
+    </div>
+
+    <div id="options-container" style="display: none;"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

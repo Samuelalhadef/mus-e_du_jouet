@@ -1,0 +1,133 @@
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 600px; /* Augmenté pour de plus grandes images */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.slides__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 400px; /* Plus large */
+  height: 500px; /* Plus haut */
+  transition: all 500ms ease-out;
+  cursor: pointer;
+  transform-origin: center center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slide__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: visible; /* Changé pour permettre au titre d'être en dehors */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide--image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Changé pour garder les proportions */
+  background: transparent;
+}
+
+.slide-info {
+  position: absolute;
+  bottom: -60px; /* Déplacé sous l'image */
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 10px 30px;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.slide-info--text[data-title] {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.slide[data-previous] {
+  transform: translate(-140%, -50%) scale(0.6) translateZ(-200px);
+  opacity: 0.8;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.slide[data-current] {
+  transform: translate(-50%, -50%) scale(1) translateZ(0);
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.slide[data-next] {
+  transform: translate(40%, -50%) scale(0.6) translateZ(-200px);
+  opacity: 0.8;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.slider--btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  z-index: 3;
+}
+
+.slider--btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.slider--btn.prev {
+  left: 20px;
+}
+
+.slider--btn.next {
+  right: 20px;
+}
+
+.slider--btn svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
