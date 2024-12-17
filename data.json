@@ -1,0 +1,77 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "useSlider": true,
+      "text": "Quel jouet voulez-vous découvrir ?",
+      "options": [
+        {
+          "text": "Sophie la girafe",
+          "nextQuestion": 2,
+          "video": "video/test1.mp4",
+          "image": "images/Sophie_Girafe.jpg",
+          "subtitle": "Le jouet emblématique",
+          "description": "Découvrez l'histoire de Sophie la girafe."
+        },
+        {
+          "text": "Playmobil",
+          "nextQuestion": 3,
+          "video": "video/playmobil.mp4",
+          "image": "images/playmobil.jpg",
+          "subtitle": "L'univers des figurines",
+          "description": "Explorez le monde des Playmobil."
+        },
+        {
+          "text": "Téléphone Fisher-Price",
+          "nextQuestion": 4,
+          "video": "video/fisherprice.mp4",
+          "image": "images/fisher_price.jpg",
+          "subtitle": "Le classique indémodable",
+          "description": "Apprenez-en plus sur ce jouet iconique."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Qu'est-ce qui vous intéresse dans Sophie la girafe ?",
+      "options": [
+        {
+          "text": "Son histoire",
+          "video": "video/test1.mp4"
+        },
+        {
+          "text": "Sa popularité",
+          "video": "video/test1.mp4"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Quel univers Playmobil voulez-vous explorer ?",
+      "options": [
+        {
+          "text": "Les pirates",
+          "video": "video/playmobil_pirates.mp4"
+        },
+        {
+          "text": "Les chevaliers",
+          "video": "video/playmobil_chevaliers.mp4"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Pourquoi le téléphone Fisher-Price vous intéresse-t-il ?",
+      "options": [
+        {
+          "text": "Son design",
+          "video": "video/fisher_design.mp4"
+        },
+        {
+          "text": "Son impact culturel",
+          "video": "video/fisher_culture.mp4"
+        }
+      ]
+    }
+  ]
+}
