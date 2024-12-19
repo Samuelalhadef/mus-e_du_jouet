@@ -5,9 +5,35 @@
     <title>Admin - Musée du Jouet</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <link rel="stylesheet" href="admin.css">
-
+    <style>
+        .nav-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .return-button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        
+        .return-button:hover {
+            background-color: #357abd;
+        }
+    </style>
 </head>
 <body>
+    <div class="nav-controls">
+        <button class="return-button" onclick="window.location.href='index.html'">Retour à l'accueil</button>
+    </div>
+
     <h1>Dashboard Administrateur - Musée du Jouet</h1>
 
     <div class="time-display">
@@ -58,6 +84,6 @@
         <div id="recent-sessions"></div>
     </div>
 
-<script src="admin.js"></script>
+    <script src="admin.js"></script>
 </body>
 </html>

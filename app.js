@@ -8,13 +8,15 @@ let isDragging = false;
 let clickStartX = 0;
 let clickStartTime = 0;
 let currentSessionIndex;
+let inactivityTimer;
 
 // Constantes
 const CLICK_THRESHOLD = 5;
-const CLICK_TIMEOUT = 300;
+const CLICK_TIMEOUT = 10000;
 const STATS_KEY = "appStats";
+const INACTIVITY_TIMEOUT = 180000; // 3 minutes
 
-// Canal de communication pour les vidéos
+// Canal de communication pour les médias
 const channel = new BroadcastChannel("video-channel");
 
 // Fonction pour obtenir les statistiques par défaut
@@ -34,20 +36,106 @@ function getDefaultStats() {
 // Stats globales initialisées avec les valeurs par défaut
 let globalStats = getDefaultStats();
 
-// Fonctions de gestion du temps
-function getCurrentDateTime() {
-  const now = new Date();
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: false,
-  };
-  return now.toLocaleDateString("fr-FR", options);
+// Gestion de la section texte
+function showTextSection(option) {
+  const questionText = document.getElementById("question-text");
+  const optionsContainer = document.getElementById("options-container");
+  const slider = document.querySelector(".slider");
+  const textSection = document.createElement("div");
+
+  textSection.id = "text-section";
+  textSection.className = "text-section";
+  textSection.innerHTML = `
+    <div class="text-content">
+      <h2>${option.text}</h2>
+      <p>${option.description}</p>
+      <button id="next-question-btn" class="next-question-button">
+        Question suivante
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14m-7-7 7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  `;
+
+  textSection.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ff9800, #ffc107, #ff5722);
+    background-size: 300% 300%;
+    animation: gradientAnimation 8s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  `;
+
+  document.body.appendChild(textSection);
+
+  // Masquer les éléments de question
+  if (questionText) questionText.style.display = "none";
+  if (optionsContainer) optionsContainer.style.display = "none";
+  if (slider) slider.style.display = "none";
+
+  // Afficher la section texte avec animation
+  requestAnimationFrame(() => {
+    textSection.style.opacity = "1";
+  });
+
+  // Ajouter l'événement click au bouton
+  const nextButton = document.getElementById("next-question-btn");
+  nextButton.addEventListener("click", () => {
+    hideTextSection();
+
+    // Envoyer un message spécifique pour le passage à la question suivante
+    channel.postMessage({ action: "nextQuestion" });
+
+    setTimeout(() => {
+      const questionText = document.getElementById("question-text");
+      if (questionText) questionText.style.display = "block";
+
+      if (option.nextQuestion) {
+        showQuestion(option.nextQuestion);
+      } else {
+        endQuestionnaire();
+      }
+    }, 300);
+  });
+}
+
+function hideTextSection() {
+  const textSection = document.getElementById("text-section");
+  if (textSection) {
+    textSection.style.opacity = "0";
+    setTimeout(() => {
+      textSection.remove();
+    }, 300);
+  }
+}
+
+// Fonction pour réinitialiser le timer d'inactivité
+function resetInactivityTimer() {
+  clearTimeout(inactivityTimer);
+  inactivityTimer = setTimeout(() => {
+    returnToFirstQuestion();
+  }, INACTIVITY_TIMEOUT);
+}
+
+// Fonction pour retourner à la première question
+function returnToFirstQuestion() {
+  clearTimeout(inactivityTimer);
+  hideTextSection();
+  if (questions && questions.length > 0) {
+    currentSlideIndex = 0;
+    showQuestion(questions[0].id);
+    channel.postMessage({ action: "reset" });
+  }
+  resetInactivityTimer();
 }
 
 // Charger les stats depuis localStorage
@@ -55,10 +143,9 @@ function loadStats() {
   try {
     const savedStats = localStorage.getItem(STATS_KEY);
     if (savedStats) {
-      const parsedStats = JSON.parse(savedStats);
       globalStats = {
         ...getDefaultStats(),
-        ...parsedStats,
+        ...JSON.parse(savedStats),
       };
     }
   } catch (error) {
@@ -136,13 +223,18 @@ function setupSlider(options) {
     slide.setAttribute("data-index", index);
 
     slide.innerHTML = `
-            <div class="slide__inner">
-                <img class="slide--image" src="${option.image}" alt="${option.text}" />
-                <div class="slide-info">
-                    <div class="slide-info--text" data-title>${option.text}</div>
-                </div>
-            </div>
-        `;
+      <div class="slide__inner">
+        <img class="slide--image" src="${option.image}" alt="${option.text}" />
+        <div class="slide-info">
+          <div class="slide-info--text" data-title>${option.text}</div>
+          ${
+            option.subtitle
+              ? `<div class="slide-subtitle">${option.subtitle}</div>`
+              : ""
+          }
+        </div>
+      </div>
+    `;
 
     slide.addEventListener("touchstart", handleTouchStart, { passive: false });
     slide.addEventListener("touchmove", handleTouchMove, { passive: false });
@@ -158,6 +250,7 @@ function setupSlider(options) {
 
 // Gestion des événements tactiles
 function handleTouchStart(e) {
+  resetInactivityTimer();
   startX = e.touches[0].clientX;
   clickStartX = e.touches[0].clientX;
   clickStartTime = Date.now();
@@ -179,6 +272,7 @@ function handleTouchMove(e) {
 }
 
 function handleTouchEnd(e) {
+  resetInactivityTimer();
   if (!isDragging) return;
 
   const touch = e.changedTouches[0];
@@ -194,6 +288,7 @@ function handleTouchEnd(e) {
 
 // Gestion des événements souris
 function handleMouseDown(e) {
+  resetInactivityTimer();
   startX = e.clientX;
   clickStartX = e.clientX;
   clickStartTime = Date.now();
@@ -215,6 +310,7 @@ function handleMouseMove(e) {
 }
 
 function handleMouseUp(e) {
+  resetInactivityTimer();
   if (!isDragging) return;
 
   const diffX = Math.abs(e.clientX - clickStartX);
@@ -229,8 +325,9 @@ function handleMouseUp(e) {
   document.removeEventListener("mouseup", handleMouseUp);
 }
 
-// Navigation dans le slider
+// Navigation du slider
 function navigate(direction) {
+  resetInactivityTimer();
   if (isTransitioning || !currentQuestion?.options) return;
 
   const totalSlides = currentQuestion.options.length;
@@ -270,6 +367,7 @@ function updateSlidePositions() {
 
 // Gestion des clics sur les slides
 function handleSlideClick(slideElement) {
+  resetInactivityTimer();
   if (!slideElement || !currentQuestion?.options) return;
 
   const index = parseInt(slideElement.getAttribute("data-index"));
@@ -279,15 +377,35 @@ function handleSlideClick(slideElement) {
   if (!option) return;
 
   if (index === currentSlideIndex) {
-    if (option.video) {
-      channel.postMessage({ video: option.video });
-      updateStats(option);
-    }
+    if (option.video || option.audio) {
+      showTextSection(option);
 
-    if (option.nextQuestion) {
-      showQuestion(option.nextQuestion);
-    } else {
-      endQuestionnaire();
+      channel.postMessage({
+        video: option.video,
+        audio: option.audio,
+      });
+      updateStats(option);
+
+      const audioEndListener = (event) => {
+        if (event.data.action === "audioEnded") {
+          hideTextSection();
+
+          setTimeout(() => {
+            const questionText = document.getElementById("question-text");
+            if (questionText) questionText.style.display = "block";
+
+            if (option.nextQuestion) {
+              showQuestion(option.nextQuestion);
+            } else {
+              endQuestionnaire();
+            }
+          }, 300);
+
+          channel.removeEventListener("message", audioEndListener);
+        }
+      };
+
+      channel.addEventListener("message", audioEndListener);
     }
   } else {
     const direction = index > currentSlideIndex ? 1 : -1;
@@ -300,12 +418,23 @@ function setupSliderNavigation() {
   const prevBtn = document.querySelector(".slider--btn.prev");
   const nextBtn = document.querySelector(".slider--btn.next");
 
-  if (prevBtn) prevBtn.onclick = () => navigate(-1);
-  if (nextBtn) nextBtn.onclick = () => navigate(1);
+  if (prevBtn) {
+    prevBtn.onclick = () => {
+      resetInactivityTimer();
+      navigate(-1);
+    };
+  }
+  if (nextBtn) {
+    nextBtn.onclick = () => {
+      resetInactivityTimer();
+      navigate(1);
+    };
+  }
 }
 
 // Affichage d'une question
 function showQuestion(questionId) {
+  resetInactivityTimer();
   const newQuestion = questions?.find((q) => q.id === questionId);
   if (!newQuestion) {
     endQuestionnaire();
@@ -319,7 +448,10 @@ function showQuestion(questionId) {
   const optionsContainer = document.getElementById("options-container");
   const slider = document.querySelector(".slider");
 
-  if (questionText) questionText.textContent = currentQuestion.text;
+  if (questionText) {
+    questionText.style.display = "block";
+    questionText.textContent = currentQuestion.text;
+  }
 
   if (currentQuestion.useSlider) {
     setupSlider(currentQuestion.options);
@@ -347,15 +479,34 @@ function setupOptionsAsButtons(options) {
     button.textContent = option.text;
 
     button.onclick = () => {
-      if (option.video) {
-        channel.postMessage({ video: option.video });
-        updateStats(option);
-      }
+      resetInactivityTimer();
 
-      if (option.nextQuestion) {
-        showQuestion(option.nextQuestion);
-      } else {
-        endQuestionnaire();
+      if (option.video || option.audio) {
+        showTextSection(option);
+
+        channel.postMessage({
+          video: option.video,
+          audio: option.audio,
+        });
+        updateStats(option);
+
+        const audioEndListener = (event) => {
+          if (event.data.action === "audioEnded") {
+            hideTextSection();
+
+            setTimeout(() => {
+              if (option.nextQuestion) {
+                showQuestion(option.nextQuestion);
+              } else {
+                endQuestionnaire();
+              }
+            }, 300);
+
+            channel.removeEventListener("message", audioEndListener);
+          }
+        };
+
+        channel.addEventListener("message", audioEndListener);
       }
     };
 
@@ -365,6 +516,7 @@ function setupOptionsAsButtons(options) {
 
 // Fin du questionnaire
 function endQuestionnaire() {
+  clearTimeout(inactivityTimer);
   const elements = {
     questionText: document.getElementById("question-text"),
     optionsContainer: document.getElementById("options-container"),
@@ -372,7 +524,14 @@ function endQuestionnaire() {
   };
 
   if (elements.questionText) {
-    elements.questionText.textContent = "Merci d'avoir participé !";
+    elements.questionText.innerHTML = `
+      Merci d'avoir participé !<br>
+      <span style="font-size: 0.8em; display: block; margin-top: 1em;">
+        Merci à l'IIM digital school et à<br>
+        D'ANDURAIN Xavier, DA COSTA FERNANDES Julie, DARAICHE Vladimir,<br>
+        RASINGER Elise, ROBERT Camille, HOUAT Sofiane,<br>
+        GODEFROY Célestin, ALHADEF Samuel, PARONE Raphaël
+      </span>`;
   }
   if (elements.optionsContainer) {
     elements.optionsContainer.innerHTML = "";
@@ -382,6 +541,11 @@ function endQuestionnaire() {
   }
 
   endSession(currentSessionIndex);
+
+  // Retour automatique à la première question après 3 secondes
+  setTimeout(() => {
+    returnToFirstQuestion();
+  }, 3000);
 }
 
 // Mise à jour des statistiques
@@ -429,11 +593,50 @@ window.addEventListener("load", () => {
   currentSessionIndex = startNewSession();
   saveStats();
   loadQuestions();
+  resetInactivityTimer();
+
+  // Ajouter les écouteurs d'événements pour réinitialiser le timer
+  ["mousedown", "mousemove", "keypress", "touchstart", "scroll"].forEach(
+    (event) => {
+      document.addEventListener(event, resetInactivityTimer);
+    }
+  );
 });
 
 // Gestion de la fermeture de la page
 window.addEventListener("beforeunload", () => {
   if (currentSessionIndex !== undefined) {
     endSession(currentSessionIndex);
+  }
+  // Nettoyer le canal de communication
+  channel.close();
+});
+
+// Gestion de la visibilité de la page
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    clearTimeout(inactivityTimer);
+  } else {
+    resetInactivityTimer();
+  }
+});
+
+// Fonction helper pour vérifier si un élément est visible
+function isElementVisible(element) {
+  if (!element) return false;
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Gestion du redimensionnement de la fenêtre
+window.addEventListener("resize", () => {
+  if (currentQuestion?.useSlider) {
+    updateSlidePositions();
   }
 });

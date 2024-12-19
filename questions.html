@@ -9,8 +9,14 @@
 </head>
 
 <body>
-    <h1>Questions - Musée du Jouet</h1>
+    
     <div id="question-text"></div>
+    <button id="return-button" onclick="returnToFirstQuestion()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Retour au début
+    </button>
 
     <div class="slider" style="display: none;">
         <button class="slider--btn prev">
@@ -28,6 +34,13 @@
                 <path d="m9 18 6-6-6-6" />
             </svg>
         </button>
+    </div>
+
+    <div id="text-section" class="text-section" style="display: none;">
+        <div class="text-content">
+            <h2 id="text-title"></h2>
+            <p id="text-description"></p>
+        </div>
     </div>
 
     <div id="options-container" style="display: none;"></div>
