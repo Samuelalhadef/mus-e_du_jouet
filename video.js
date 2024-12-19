@@ -159,7 +159,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Transition vers l'animation idle
   async function switchToIdle(character) {
     if (!animations[character]) return;
+    console.log("condition validé");
     await playVideoWithFade(animations[character].idle);
+    console.log("idole lancé");
   }
 
   // Fonction pour réinitialiser l'état
@@ -238,6 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isPlaying = false;
     if (currentCharacter && characterSelected) {
       switchToIdle(currentCharacter);
+      console.log("switched to idle");
     }
   });
 
