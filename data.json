@@ -34,7 +34,6 @@
         }
       ]
     },
-
     {
       "id": 2,
       "text": "Que souhaitez-vous savoir sur moi ?",
@@ -170,7 +169,6 @@
         }
       ]
     },
-
     {
       "id": 10,
       "text": "Que souhaitez-vous savoir sur moi ?",
@@ -258,187 +256,121 @@
       "options": [
         {
           "text": "Quels avantages ça te donne d'être si petit ?",
-          "nextQuestion": 1,
+          "nextQuestion": 6,
           "video": "video/playmobil_advantages.mp4",
           "audio": "audio/QUESTION 11.mp3",
           "description": "Je tiens dans une poche, je peux vivre dans un château, un bateau pirate... Et je ne prends pas trop de place dans ta chambre."
         },
         {
           "text": "Pourquoi ton visage est-il si simple ?",
-          "nextQuestion": 1,
+          "nextQuestion": 6,
           "video": "video/playmobil_face.mp4",
           "audio": "audio/QUESTION 12.mp3",
           "description": "Mon visage est simple comme un dessin d'enfant. Remarque, je n'ai pas de nez !"
         },
         {
           "text": "Quel est le plus grand Playmobil qui a été créé ?",
-          "nextQuestion": 1,
+          "nextQuestion": 6,
           "video": "video/playmobil_face.mp4",
           "audio": "audio/QUESTION 13.mp3",
           "description": "Un Playmobil de 5 mètres existe, exposé parfois pour des événements spéciaux."
         },
         {
           "text": "Quels sont les premiers personnages Playmobil ?",
-          "nextQuestion": 1,
+          "nextQuestion": 6,
           "video": "video/playmobil_first.mp4",
           "audio": "audio/QUESTION 14.mp3",
           "description": "Au début, il y avait des cow-boys, des chevaliers et des ouvriers. Pas de femmes, ni d'enfants."
         },
         {
           "text": "Quand les Playmobils femmes et enfants ont-ils été créés ?",
-          "nextQuestion": 1,
+          "nextQuestion": 6,
           "video": "video/playmobil_family.mp4",
           "audio": "audio/QUESTION 15.mp3",
           "description": "Les femmes en 1976, les enfants en 1981 et les bébés en 1984."
         }
       ]
     },
-
-    [
-      {
-        "id": 1,
-        "text": "Quand as-tu été créé ?",
-        "options": [
-          {
-            "text": "Créé en 1961",
-            "video": "video/fisher_creation.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "J’ai été créé en 1961. Depuis, je fais partie des jouets classiques qui ne se démodent jamais."
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "text": "Qui t’a inventé ?",
-        "options": [
-          {
-            "text": "Inventé par Ernest Thornell",
-            "video": "video/fisher_inventor.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "C’est Ernest Thornell qui m’a inventé pour la marque Fisher-Price, spécialiste des jouets pour bébés dans les années 60-70."
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "text": "Pourquoi ton inventeur t’a donné la forme d’un téléphone ?",
-        "options": [
-          {
-            "text": "Une idée inspirée d’un vrai téléphone",
-            "video": "video/fisher_forme_telephone.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "En voyant sa fille jouer avec un vrai téléphone en métal, l’inventeur a eu l’idée d’ajouter des roulettes et un visage à un téléphone-jouet. Cela changeait des animaux à traîner !"
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "text": "As-tu changé depuis ta création ?",
-        "options": [
-          {
-            "text": "Des modifications en 2000, mais retour à l’original",
-            "video": "video/fisher_changed.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "En 2000, on a essayé de remplacer le cadran rotatif par des touches lumineuses, mais les gens préféraient l’ancien système. Mes roues sont devenues bleues, mais j’ai gardé mon visage souriant."
-          }
-        ]
-      },
-      {
-        "id": 5,
-        "text": "Où as-tu été créé ?",
-        "options": [
-          {
-            "text": "Né aux États-Unis, célèbre dans le monde entier",
-            "video": "video/fisher_origin.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "J’ai été créé aux États-Unis. Ma simplicité m’a rendu célèbre dans le monde entier. En 2003, j’ai même été nommé comme l’un des 100 jouets les plus mémorables du XXe siècle."
-          }
-        ]
-      },
-      {
-        "id": 6,
-        "text": "Comment t’a-t-on appelé ?",
-        "options": [
-          {
-            "text": "Le Chatter téléphone",
-            "video": "video/fisher_name.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "On m’a appelé le 'Chatter téléphone'. 'Chatter' signifie 'bavard' en anglais."
-          }
-        ]
-      },
-      {
-        "id": 7,
-        "text": "Pourquoi ne ressembles-tu pas aux téléphones d’aujourd’hui ?",
-        "options": [
-          {
-            "text": "Inspiré des téléphones anciens à cadran",
-            "video": "video/fisher_oldstyle.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "Je ressemble aux téléphones qui existaient à ma création : un cadran rotatif, un combiné relié par un fil. Les vrais téléphones n’étaient pas aussi colorés que moi."
-          }
-        ]
-      },
-      {
-        "id": 8,
-        "text": "Que peut-on faire avec toi ?",
-        "options": [
-          {
-            "text": "Me tirer, faire semblant de téléphoner, écouter ma sonnerie",
-            "video": "video/fisher_features.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "Les enfants peuvent me tirer avec ma ficelle, mes yeux bougent quand je roule. On peut aussi faire semblant de téléphoner et quand on tourne mon cadran, je sonne !"
-          }
-        ]
-      },
-      {
-        "id": 9,
-        "text": "Pourquoi les enfants adorent les jouets en forme de téléphone ?",
-        "options": [
-          {
-            "text": "Ils aiment imiter les adultes",
-            "video": "video/fisher_imitation.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "Les enfants aiment imiter leurs parents. Grâce à moi, ils peuvent apprendre à 'passer des appels' comme les grands."
-          }
-        ]
-      },
-      {
-        "id": 10,
-        "text": "As-tu toujours été en plastique ?",
-        "options": [
-          {
-            "text": "D’abord en bois, puis en plastique",
-            "video": "video/fisher_materials.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "Non, au début, j’étais en bois, mais j’ai rapidement été fabriqué en plastique."
-          }
-        ]
-      },
-      {
-        "id": 11,
-        "text": "Pourquoi es-tu redevenu célèbre dans les années 2000 ?",
-        "options": [
-          {
-            "text": "Grâce à Toy Story 3",
-            "video": "video/fisher_toystory3.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "J’ai joué dans le film d’animation 'Toy Story 3' (2010). J’étais l’un des seuls jouets gentils de la garderie Sunnyside, aidant Woody et ses amis à s’échapper."
-          }
-        ]
-      },
-      {
-        "id": 12,
-        "text": "N’as-tu jamais rêvé de fonctionner pour de vrai ?",
-        "options": [
-          {
-            "text": "Équipé du Bluetooth en 2021",
-            "video": "video/fisher_bluetooth.mp4",
-            "audio": "audio/chanson.mp3",
-            "description": "En 2021, on m’a équipé du Bluetooth pour me connecter à un smartphone. Les enfants pouvaient ainsi passer et recevoir de vrais appels, entendus dans mon combiné grâce à un haut-parleur."
-          }
-        ]
-      }
-    ]
+    {
+      "id": 20,
+      "text": "Que souhaitez-vous savoir sur le téléphone Fisher-Price ?",
+      "options": [
+        {
+          "text": "Quand as-tu été créé ?",
+          "nextQuestion": 21,
+          "video": "video/fisher_creation.mp4",
+          "audio": "audio/QUESTION 2.mp3",
+          "description": "J’ai été créé en 1961. Depuis, je fais partie des jouets classiques qui ne se démodent jamais."
+        },
+        {
+          "text": "Qui t’a inventé ?",
+          "nextQuestion": 21,
+          "video": "video/fisher_inventor.mp4",
+          "audio": "audio/QUESTION 5.mp3",
+          "description": "C’est Ernest Thornell qui m’a inventé pour la marque Fisher-Price, spécialiste des jouets pour bébés dans les années 60-70."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "text": "Que souhaitez-vous savoir d’autre ?",
+      "options": [
+        {
+          "text": "Pourquoi as-tu la forme d’un téléphone ?",
+          "nextQuestion": 22,
+          "video": "video/fisher_forme_telephone.mp4",
+          "audio": "audio/QUESTION 3.mp3",
+          "description": "En voyant sa fille jouer avec un vrai téléphone en métal, l’inventeur a eu l’idée d’ajouter des roulettes et un visage à un téléphone-jouet. Cela changeait des animaux à traîner !"
+        },
+        {
+          "text": "As-tu changé depuis ta création ?",
+          "nextQuestion": 22,
+          "video": "video/fisher_changed.mp4",
+          "audio": "audio/QUESTION 4.mp3",
+          "description": "En 2000, on a essayé de remplacer le cadran rotatif par des touches lumineuses, mais les gens préféraient l’ancien système. Mes roues sont devenues bleues, mais j’ai gardé mon visage souriant."
+        },
+        {
+          "text": "Où as-tu été créé ?",
+          "nextQuestion": 22,
+          "video": "video/fisher_origin.mp4",
+          "audio": "audio/QUESTION 6.mp3",
+          "description": "J’ai été créé aux États-Unis. Ma simplicité m’a rendu célèbre dans le monde entier. En 2003, j’ai même été nommé comme l’un des 100 jouets les plus mémorables du XXe siècle."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "text": "Approfondissons un peu plus",
+      "options": [
+        {
+          "text": "Pourquoi es-tu redevenu célèbre dans les années 2000 ?",
+          "nextQuestion": 23,
+          "video": "video/fisher_toystory3.mp4",
+          "audio": "audio/QUESTION 13.mp3",
+          "description": "J’ai joué dans le film d’animation 'Toy Story 3' (2010). J’étais l’un des seuls jouets gentils de la garderie Sunnyside, aidant Woody et ses amis à s’échapper."
+        },
+        {
+          "text": "Pourquoi les enfants adorent-ils les jouets téléphones comme toi ?",
+          "nextQuestion": 23,
+          "video": "video/fisher_imitation.mp4",
+          "audio": "audio/QUESTION 11.mp3",
+          "description": "Parce qu'ils aiment imiter leurs parents. Grâce à moi, ils peuvent apprendre à 'passer des appels' comme les grands."
+        },
+        {
+          "text": "Pourquoi ne ressembles-tu pas à un vrai téléphone de notre époque ?",
+          "nextQuestion": 23,
+          "video": "video/fisher_oldstyle.mp4",
+          "audio": "audio/QUESTION 9.mp3",
+          "description": "Je ressemble aux téléphones qui existaient au moment de ma création. Pour faire le numéro, on tournait le clavier avec des chiffres à l'aide d'un doigt. Le combiné était relié au téléphone par un fil, mais les vrais téléphones n'étaient pas si colorés que moi."
+        },
+        {
+          "text": "As-tu toujours été en plastique ?",
+          "nextQuestion": 23,
+          "video": "video/fisher_materials.mp4",
+          "audio": "audio/QUESTION 12.mp3",
+          "description": "Non, au début, j’étais en bois, mais j’ai rapidement été fabriqué en plastique."
+        }
+      ]
+    }
   ]
 }

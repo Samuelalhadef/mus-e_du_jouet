@@ -9,6 +9,8 @@ let clickStartX = 0;
 let clickStartTime = 0;
 let currentSessionIndex;
 let inactivityTimer;
+let backgroundMusic;
+let isMusicPlaying = false;
 
 // Constantes
 const CLICK_THRESHOLD = 5;
@@ -32,6 +34,106 @@ function getDefaultStats() {
     sessions: [],
   };
 }
+
+// Fonction pour initialiser la musique de fond
+function initBackgroundMusic() {
+  backgroundMusic = new Audio("audio/Son_fond.mp3"); // Remplacez par le chemin de votre fichier audio
+  backgroundMusic.loop = true;
+  backgroundMusic.volume = 0.1; // Volume à 30%
+
+  // Gérer la lecture automatique
+  document.addEventListener(
+    "click",
+    function startMusic() {
+      if (!isMusicPlaying) {
+        backgroundMusic
+          .play()
+          .then(() => {
+            isMusicPlaying = true;
+            document.removeEventListener("click", startMusic);
+          })
+          .catch((error) => console.error("Erreur de lecture audio:", error));
+      }
+    },
+    { once: true }
+  );
+}
+
+// Fonction pour mettre en pause/reprendre la musique
+function toggleBackgroundMusic() {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    isMusicPlaying = true;
+  } else {
+    backgroundMusic.pause();
+    isMusicPlaying = false;
+  }
+}
+
+// Ajouter un bouton de contrôle de la musique
+function addMusicControls() {
+  const musicBtn = document.createElement("button");
+  musicBtn.className = "music-control";
+  musicBtn.innerHTML = `
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+    </svg>
+  `;
+  musicBtn.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  `;
+
+  musicBtn.onclick = toggleBackgroundMusic;
+  document.body.appendChild(musicBtn);
+}
+
+// Modifier la fonction window.addEventListener("load") existante
+window.addEventListener("load", () => {
+  loadStats();
+  globalStats.totalUsers++;
+  currentSessionIndex = startNewSession();
+  saveStats();
+  loadQuestions();
+  resetInactivityTimer();
+
+  // Initialiser la musique de fond
+  initBackgroundMusic();
+  addMusicControls();
+
+  ["mousedown", "mousemove", "keypress", "touchstart", "scroll"].forEach(
+    (event) => {
+      document.addEventListener(event, resetInactivityTimer);
+    }
+  );
+});
+
+// Ajouter à la gestion de la visibilité de la page
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    clearTimeout(inactivityTimer);
+    if (isMusicPlaying) {
+      backgroundMusic.pause();
+    }
+  } else {
+    resetInactivityTimer();
+    if (isMusicPlaying) {
+      backgroundMusic.play();
+    }
+  }
+});
 
 // Stats globales initialisées avec les valeurs par défaut
 let globalStats = getDefaultStats();
@@ -542,7 +644,6 @@ function endQuestionnaire() {
 
   endSession(currentSessionIndex);
 
-  // Retour automatique à la première question après 3 secondes
   setTimeout(() => {
     returnToFirstQuestion();
   }, 3000);
