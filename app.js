@@ -39,7 +39,7 @@ function getDefaultStats() {
 function initBackgroundMusic() {
   backgroundMusic = new Audio("audio/Son_fond.mp3"); // Remplacez par le chemin de votre fichier audio
   backgroundMusic.loop = true;
-  backgroundMusic.volume = 0.1; // Volume à 30%
+  backgroundMusic.volume = 0.05; // Volume à 30%
 
   // Gérer la lecture automatique
   document.addEventListener(

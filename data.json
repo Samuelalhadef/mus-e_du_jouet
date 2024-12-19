@@ -8,8 +8,7 @@
         {
           "text": "Sophie la girafe",
           "nextQuestion": 2,
-          "video": "video/sophie_welcome.mp4",
-          "audio": "audio/chanson.mp3",
+          "video": "video/sophie_marche.mp4",
           "image": "images/Sophie_Grirafe_img.png",
           "subtitle": "Le jouet français mondialement connu",
           "description": "Un jouet qui traverse les générations depuis 1961"
@@ -17,8 +16,7 @@
         {
           "text": "Playmobil",
           "nextQuestion": 10,
-          "video": "video/playobil_parler.mp4",
-          "audio": "audio/chanson.mp3",
+          "video": "video/playmobil_entrer.mp4",
           "image": "images/playmobil_img.png",
           "subtitle": "L'univers en miniature",
           "description": "Une révolution dans le monde du jouet depuis 1974"
@@ -26,8 +24,7 @@
         {
           "text": "Téléphone Fisher-Price",
           "nextQuestion": 20,
-          "video": "video/fisher_welcome.mp4",
-          "audio": "audio/chanson.mp3",
+          "video": "video/fisher_entrer.mp4",
           "image": "images/telephone_img.png",
           "subtitle": "L'iconique téléphone à yeux mobiles",
           "description": "Un classique qui a bercé des générations depuis 1961"
@@ -42,14 +39,14 @@
           "text": "Quand as-tu été créée ?",
           "nextQuestion": 3,
           "video": "video/sophie_creation.mp4",
-          "audio": "audio/sophie_Q1.mp3",
+          "audio": "audio/SophieQuestion1.mp3",
           "description": "Je suis née le 25 mai 1961, il y a plus de 60 ans. Ce jour correspond à la Sainte-Sophie, ce qui explique mon nom. J’ai été créée par la société française Delacoste."
         },
         {
           "text": "Qui a eu l’idée de te créer ?",
           "nextQuestion": 3,
           "video": "video/sophie_inventor.mp4",
-          "audio": "audio/sophie_Q2.mp3",
+          "audio": "audio/SophieQuestion2.mp3",
           "description": "C’est M. Rampeau, expert des jouets en caoutchouc moulé, qui a voulu créer un jouet original différent des animaux de ferme traditionnels."
         }
       ]
@@ -62,21 +59,21 @@
           "text": "Etais-tu un jouet nouveau à l’époque ?",
           "nextQuestion": 4,
           "video": "video/sophie_newtoy.mp4",
-          "audio": "audio/sophie_Q3.mp3",
+          "audio": "audio/SophieQuestion3.mp3",
           "description": "Oui, dans les années 1960, j’étais une nouveauté ! Quand on m’appuie dessus, je fais « pouet » grâce à un sifflet interne. Les jouets couineurs sont devenus très populaires à cette époque."
         },
         {
           "text": "Es-tu toujours pareille depuis ta création ?",
           "nextQuestion": 4,
           "video": "video/sophie_same.mp4",
-          "audio": "audio/sophie_Q4.mp3",
+          "audio": "audio/SophieQuestion4.mp3",
           "description": "Je n’ai presque pas changé ! Je mesure 18 cm depuis 60 ans. Avant moi, il y avait Zoé, une girafe de 46 cm, trop grande pour les bébés. Je l’ai remplacée avec succès et aujourd’hui, je suis vendue dans plus de 85 pays !"
         },
         {
           "text": "Pourquoi as-tu la forme d’une girafe ?",
           "nextQuestion": 4,
           "video": "video/sophie_shape.mp4",
-          "audio": "audio/sophie_Q5.mp3",
+          "audio": "audio/SophieQuestion5.mp3",
           "description": "La girafe a été choisie pour son allure exotique et son long cou, parfait pour que les bébés puissent l’attraper facilement."
         }
       ]
@@ -89,28 +86,28 @@
           "text": "D’autres animaux auraient-ils pu être aussi populaires ?",
           "nextQuestion": 5,
           "video": "video/sophie_otheranimals.mp4",
-          "audio": "audio/sophie_Q6.mp3",
+          "audio": "audio/SophieQuestion6.mp3",
           "description": "Peut-être des éléphants ou des lions, mais aucun n’a un cou aussi long, très pratique pour les petites mains des bébés."
         },
         {
           "text": "Ton long cou a-t-il une utilité spéciale ?",
           "nextQuestion": 5,
           "video": "video/sophie_longneck.mp4",
-          "audio": "audio/sophie_Q7.mp3",
+          "audio": "audio/SophieQuestion7.mp3",
           "description": "Oui, il est idéal pour permettre aux bébés de m’attraper facilement et de me mâchouiller pour se faire les dents."
         },
         {
           "text": "Combien de taches as-tu sur ton corps ?",
           "nextQuestion": 5,
           "video": "video/sophie_spots.mp4",
-          "audio": "audio/sophie_Q8.mp3",
+          "audio": "audio/SophieQuestion8.mp3",
           "description": "J’en ai 76 ! Ces taches contrastées aident les bébés à me reconnaître. À 3 mois, ils voient surtout les contrastes de couleurs."
         },
         {
           "text": "Pourquoi les bébés adorent te mâchouiller ?",
           "nextQuestion": 5,
           "video": "video/sophie_chew.mp4",
-          "audio": "audio/sophie_Q9.mp3",
+          "audio": "audio/SophieQuestion9.mp3",
           "description": "Ma texture douce et élastique apaise leurs gencives pendant la poussée des dents."
         }
       ]
@@ -123,52 +120,40 @@
           "text": "D’autres jouets ont-ils copié ton long cou ?",
           "nextQuestion": 6,
           "video": "video/sophie_copies.mp4",
-          "audio": "audio/sophie_Q10.mp3",
+          "audio": "audio/SophieQuestion10.mp3",
           "description": "Oui, plusieurs jouets ont essayé de m’imiter, mais aucun n’a atteint ma popularité ou ma qualité."
         },
         {
           "text": "En quelle matière es-tu fabriquée ?",
           "nextQuestion": 6,
           "video": "video/sophie_material.mp4",
-          "audio": "audio/sophie_Q11.mp3",
+          "audio": "audio/SophieQuestion11.mp3",
           "description": "Je suis fabriquée en caoutchouc, à partir de latex naturel, doux et sûr pour les bébés."
         },
         {
           "text": "Pourquoi le caoutchouc naturel a-t-il été choisi ?",
           "nextQuestion": 6,
           "video": "video/sophie_rubberchoice.mp4",
-          "audio": "audio/sophie_Q12.mp3",
+          "audio": "audio/SophieQuestion12.mp3",
           "description": "Parce qu’il est non toxique, légèrement élastique, idéal pour les bébés qui me mordillent et parfait pour soulager leurs gencives."
         },
         {
           "text": "D’où vient ce caoutchouc ?",
           "nextQuestion": 6,
           "video": "video/sophie_originrubber.mp4",
-          "audio": "audio/sophie_Q13.mp3",
+          "audio": "audio/SophieQuestion13.mp3",
           "description": "Il provient de plantations d’arbres à caoutchouc d’Asie du Sud-Est. Mais moi, j’ai toujours été fabriquée en France."
         },
         {
           "text": "Comment es-tu fabriquée ?",
           "nextQuestion": 6,
           "video": "video/sophie_making.mp4",
-          "audio": "audio/sophie_Q14.mp3",
+          "audio": "audio/SophieQuestion14.mp3",
           "description": "Je suis fabriquée grâce au rotomoulage. On peint ensuite mes taches à la main avec des colorants alimentaires."
         }
       ]
     },
-    {
-      "id": 6,
-      "text": "Souhaitez-vous en savoir plus ou revenir au début ?",
-      "options": [
-        {
-          "text": "Revenir au choix des jouets",
-          "nextQuestion": 1,
-          "video": "video/return_start.mp4",
-          "audio": "audio/retour.mp3",
-          "description": "Vous pouvez choisir un autre jouet à découvrir."
-        }
-      ]
-    },
+
     {
       "id": 10,
       "text": "Que souhaitez-vous savoir sur moi ?",
@@ -177,14 +162,14 @@
           "text": "Quand as-tu été créé ?",
           "nextQuestion": 11,
           "video": "video/playmobil_creation.mp4",
-          "audio": "audio/QUESTION 1.mp3",
+          "audio": "audio/PlaymobilQuestion1.mp3",
           "description": "Je suis né en 1974, en Allemagne, près de Nuremberg. Depuis, je suis devenu l'un des jouets préférés des enfants dans le monde entier. Moi, je suis un modèle de 1986."
         },
         {
           "text": "Qui t'a inventé ?",
           "nextQuestion": 11,
           "video": "video/playmobil_inventors.mp4",
-          "audio": "audio/QUESTION 2.mp3",
+          "audio": "audio/PlaymobilQuestion2.mp3",
           "description": "Ce sont les Allemands Hans Beck et Horst Brandstätter qui m'ont inventé. Ils voulaient des jouets simples laissant place à l'imagination."
         }
       ]
@@ -197,21 +182,21 @@
           "text": "Pourquoi es-tu né en pleine crise pétrolière ?",
           "nextQuestion": 12,
           "video": "video/playmobil_crisis.mp4",
-          "audio": "audio/QUESTION 3.mp3",
+          "audio": "audio/PlaymobilQuestion3.mp3",
           "description": "En 1973, le plastique coûtait cher à cause de la crise du pétrole. J'ai été conçu petit pour économiser la matière, tout en restant un jouet super."
         },
         {
           "text": "Pourquoi tu t'appelles Playmobil ?",
           "nextQuestion": 12,
           "video": "video/playmobil_name.mp4",
-          "audio": "audio/QUESTION 5.mp3",
+          "audio": "audio/PlaymobilQuestion5.mp3",
           "description": "Mon nom vient de 'play' (jouer) et 'mobil' (mobile). Avant, on nous appelait 'Klicky'."
         },
         {
           "text": "Tes inventeurs ont-ils créé d'autres jouets ?",
           "nextQuestion": 12,
           "video": "video/playmobil_other_toys.mp4",
-          "audio": "audio/QUESTION 6.mp3",
+          "audio": "audio/PlaymobilQuestion6.mp3",
           "description": "Ils ont eu du succès avec le cerceau Hoola Hoop à la fin des années 50."
         }
       ]
@@ -224,28 +209,28 @@
           "text": "Est-ce que Hans Beck pensait que tu aurais autant de succès ?",
           "nextQuestion": 13,
           "video": "video/playmobil_success.mp4",
-          "audio": "audio/QUESTION 7.mp3",
+          "audio": "audio/PlaymobilQuestion7.mp3",
           "description": "Pas du tout, il ne pensait pas que je deviendrais célèbre mondialement."
         },
         {
           "text": "Quels jouets étaient à la mode avant toi ?",
           "nextQuestion": 13,
           "video": "video/playmobil_before.mp4",
-          "audio": "audio/QUESTION 8.mp3",
-          "description": "Les grandes poupées et les camions en métal étaient plus populaires avant, mais moins flexibles pour imaginer des histoires."
+          "audio": "audio/PlaymobilQuestion8.mp3",
+          "description": "Avant, c'était les grandes poupées et les camions en métal étaient plus populaires, mais moins flexibles pour imaginer des histoires."
         },
         {
           "text": "Ton succès a-t-il été immédiat ?",
           "nextQuestion": 13,
           "video": "video/playmobil_immediate.mp4",
-          "audio": "audio/QUESTION 9.mp3",
+          "audio": "audio/PlaymobilQuestion9.mp3",
           "description": "Dès les salons du jouet, les enfants m'ont adopté et l'aventure a commencé."
         },
         {
           "text": "Pourquoi es-tu si petit ?",
           "nextQuestion": 13,
           "video": "video/playmobil_size.mp4",
-          "audio": "audio/QUESTION 10.mp3",
+          "audio": "audio/PlaymobilQuestion10.mp3",
           "description": "Ma taille de 7,5 cm est idéale pour les petites mains et pour m'emporter partout."
         }
       ]
@@ -258,35 +243,35 @@
           "text": "Quels avantages ça te donne d'être si petit ?",
           "nextQuestion": 6,
           "video": "video/playmobil_advantages.mp4",
-          "audio": "audio/QUESTION 11.mp3",
+          "audio": "audio/PlaymobilQuestion11.mp3",
           "description": "Je tiens dans une poche, je peux vivre dans un château, un bateau pirate... Et je ne prends pas trop de place dans ta chambre."
         },
         {
           "text": "Pourquoi ton visage est-il si simple ?",
           "nextQuestion": 6,
           "video": "video/playmobil_face.mp4",
-          "audio": "audio/QUESTION 12.mp3",
+          "audio": "audio/PlaymobilQuestion12.mp3",
           "description": "Mon visage est simple comme un dessin d'enfant. Remarque, je n'ai pas de nez !"
         },
         {
           "text": "Quel est le plus grand Playmobil qui a été créé ?",
           "nextQuestion": 6,
           "video": "video/playmobil_face.mp4",
-          "audio": "audio/QUESTION 13.mp3",
+          "audio": "audio/PlaymobilQuestion13.mp3",
           "description": "Un Playmobil de 5 mètres existe, exposé parfois pour des événements spéciaux."
         },
         {
           "text": "Quels sont les premiers personnages Playmobil ?",
           "nextQuestion": 6,
           "video": "video/playmobil_first.mp4",
-          "audio": "audio/QUESTION 14.mp3",
+          "audio": "audio/PlaymobilQuestion14.mp3",
           "description": "Au début, il y avait des cow-boys, des chevaliers et des ouvriers. Pas de femmes, ni d'enfants."
         },
         {
           "text": "Quand les Playmobils femmes et enfants ont-ils été créés ?",
           "nextQuestion": 6,
           "video": "video/playmobil_family.mp4",
-          "audio": "audio/QUESTION 15.mp3",
+          "audio": "audio/PlaymobilQuestion15.mp3",
           "description": "Les femmes en 1976, les enfants en 1981 et les bébés en 1984."
         }
       ]
@@ -296,17 +281,17 @@
       "text": "Que souhaitez-vous savoir sur le téléphone Fisher-Price ?",
       "options": [
         {
-          "text": "Quand as-tu été créé ?",
+          "text": "De quoi as-tu été inspiré ?",
           "nextQuestion": 21,
           "video": "video/fisher_creation.mp4",
-          "audio": "audio/QUESTION 2.mp3",
-          "description": "J’ai été créé en 1961. Depuis, je fais partie des jouets classiques qui ne se démodent jamais."
+          "audio": "audio/ChatterQuestion3.mp3",
+          "description": "C’est en voyant sa fille qui jouait en traînant un vrai téléphone en métal que mon inventeur a eu l’idée d’ajouter des roulettes à un téléphone et de lui donner un visage."
         },
         {
           "text": "Qui t’a inventé ?",
           "nextQuestion": 21,
           "video": "video/fisher_inventor.mp4",
-          "audio": "audio/QUESTION 5.mp3",
+          "audio": "audio/ChatterQuestion5.mp3",
           "description": "C’est Ernest Thornell qui m’a inventé pour la marque Fisher-Price, spécialiste des jouets pour bébés dans les années 60-70."
         }
       ]
@@ -319,21 +304,21 @@
           "text": "Pourquoi as-tu la forme d’un téléphone ?",
           "nextQuestion": 22,
           "video": "video/fisher_forme_telephone.mp4",
-          "audio": "audio/QUESTION 3.mp3",
+          "audio": "audio/ChatterQuestion3.mp3",
           "description": "En voyant sa fille jouer avec un vrai téléphone en métal, l’inventeur a eu l’idée d’ajouter des roulettes et un visage à un téléphone-jouet. Cela changeait des animaux à traîner !"
         },
         {
           "text": "As-tu changé depuis ta création ?",
           "nextQuestion": 22,
           "video": "video/fisher_changed.mp4",
-          "audio": "audio/QUESTION 4.mp3",
+          "audio": "audio/ChatterQuestion4.mp3",
           "description": "En 2000, on a essayé de remplacer le cadran rotatif par des touches lumineuses, mais les gens préféraient l’ancien système. Mes roues sont devenues bleues, mais j’ai gardé mon visage souriant."
         },
         {
           "text": "Où as-tu été créé ?",
           "nextQuestion": 22,
           "video": "video/fisher_origin.mp4",
-          "audio": "audio/QUESTION 6.mp3",
+          "audio": "audio/ChatterQuestion6.mp3",
           "description": "J’ai été créé aux États-Unis. Ma simplicité m’a rendu célèbre dans le monde entier. En 2003, j’ai même été nommé comme l’un des 100 jouets les plus mémorables du XXe siècle."
         }
       ]
@@ -346,29 +331,22 @@
           "text": "Pourquoi es-tu redevenu célèbre dans les années 2000 ?",
           "nextQuestion": 23,
           "video": "video/fisher_toystory3.mp4",
-          "audio": "audio/QUESTION 13.mp3",
+          "audio": "audio/ChatterQuestion13.mp3",
           "description": "J’ai joué dans le film d’animation 'Toy Story 3' (2010). J’étais l’un des seuls jouets gentils de la garderie Sunnyside, aidant Woody et ses amis à s’échapper."
         },
         {
           "text": "Pourquoi les enfants adorent-ils les jouets téléphones comme toi ?",
           "nextQuestion": 23,
           "video": "video/fisher_imitation.mp4",
-          "audio": "audio/QUESTION 11.mp3",
+          "audio": "audio/ChatterQuestion11.mp3",
           "description": "Parce qu'ils aiment imiter leurs parents. Grâce à moi, ils peuvent apprendre à 'passer des appels' comme les grands."
         },
         {
           "text": "Pourquoi ne ressembles-tu pas à un vrai téléphone de notre époque ?",
           "nextQuestion": 23,
           "video": "video/fisher_oldstyle.mp4",
-          "audio": "audio/QUESTION 9.mp3",
+          "audio": "audio/ChatterQuestion9.mp3",
           "description": "Je ressemble aux téléphones qui existaient au moment de ma création. Pour faire le numéro, on tournait le clavier avec des chiffres à l'aide d'un doigt. Le combiné était relié au téléphone par un fil, mais les vrais téléphones n'étaient pas si colorés que moi."
-        },
-        {
-          "text": "As-tu toujours été en plastique ?",
-          "nextQuestion": 23,
-          "video": "video/fisher_materials.mp4",
-          "audio": "audio/QUESTION 12.mp3",
-          "description": "Non, au début, j’étais en bois, mais j’ai rapidement été fabriqué en plastique."
         }
       ]
     }
