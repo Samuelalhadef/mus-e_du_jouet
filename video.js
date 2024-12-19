@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Fonction pour basculer entre les lecteurs vidéo
   function switchVideoPlayers() {
+    console.log("video change");
     [currentVideo, nextVideo] = [nextVideo, currentVideo];
     currentVideo.style.opacity = "1";
     nextVideo.style.opacity = "0";
@@ -158,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Transition vers l'animation idle
   async function switchToIdle(character) {
+    console.log("condition non verifié");
     if (!animations[character]) return;
     console.log("condition validé");
     await playVideoWithFade(animations[character].idle);
@@ -238,6 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Gestion de la fin de l'audio
   audioPlayer.addEventListener("ended", () => {
     isPlaying = false;
+    console.log("switched not verifie ");
     if (currentCharacter && characterSelected) {
       switchToIdle(currentCharacter);
       console.log("switched to idle");
